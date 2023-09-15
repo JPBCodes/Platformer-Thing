@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn34vltvb57fs"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_8vfhp"]
+[ext_resource type="PackedScene" uid="uid://cw47gbf2k3r5d" path="res://BG.tscn" id="2_mmvl1"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_8vfhp")
+
+[node name="PlayBtn" type="Button" parent="."]
+offset_left = 474.0
+offset_top = 124.0
+offset_right = 698.0
+offset_bottom = 256.0
+text = "Play"
+
+[node name="QuitBtn" type="Button" parent="."]
+offset_left = 481.0
+offset_top = 364.0
+offset_right = 709.0
+offset_bottom = 498.0
+tooltip_text = "This quits the game"
+text = "Quit"
+
+[node name="BG" parent="." instance=ExtResource("2_mmvl1")]
+
+[connection signal="pressed" from="PlayBtn" to="." method="_on_play_btn_pressed"]
+[connection signal="pressed" from="QuitBtn" to="." method="_on_quit_btn_pressed"]
